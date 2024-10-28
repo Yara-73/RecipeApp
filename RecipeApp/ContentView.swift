@@ -1,24 +1,16 @@
-//
-//  ContentView.swift
-//  RecipeApp
-//
-//  Created by Yara Alshammari on 25/04/1446 AH.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        MainPage()
+        
         }
-        .padding()
     }
-}
 
-#Preview {
-    ContentView()
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .preferredColorScheme(.dark) // Optional: Set dark mode preview if needed
+    }
 }
