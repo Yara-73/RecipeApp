@@ -1,6 +1,8 @@
+// MainPage.swift
 import SwiftUI
 
 struct MainPage: View {
+    @StateObject private var viewModel = MainPageViewModel()
     
     init() {
         let appearance = UINavigationBarAppearance()
@@ -22,6 +24,7 @@ struct MainPage: View {
                     .frame(width: 274, height: 274)
                     .foregroundColor(.orange)
                     .padding()
+                
                 // "No Recipe" Text
                 Text("There’s no recipe yet")
                     .font(.title2)
@@ -39,7 +42,7 @@ struct MainPage: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        print("Add Recipe tapped")
+                        viewModel.addRecipe() // Call ViewModel action
                     }) {
                         Image(systemName: "plus")
                     }
